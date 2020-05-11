@@ -95,57 +95,6 @@ export default function App() {
 
   return (
       <AppContainer />
-/*
-
-    <View style={{flex: 1, paddingTop: 20}}>
-      <View style={styles.container}>
-        <DatePicker
-          style={{width:200, marginTop: 30}}
-          mode="date"
-          date={actDate}
-          onDateChange={(actDate) => setActDate(actDate)}
-          format="YYYY-MM-DD"
-        />
-
-        <TextInput placeholder='Activity' style={{ marginTop: 5, marginBottom: 5,  fontSize:18, width: 200, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(activity) => setActivity(activity)}
-          value={activity}/>
-
-        <View >
-          <Button onPress={saveItem} title="Save" /> 
-          <Button onPress={updateList} title="Update" /> 
-        </View>
-
-        <Text>Date to DB :{actDate}</Text>
-        <Text>Today's date :{thisDate}</Text>
-        <Text style={{marginTop: 30, fontSize: 20}}>Activities</Text>
-
-
-        <FlatList 
-          style={{marginLeft : "5%"}}
-          keyExtractor={item => item.id.toString()} 
-          renderItem={({item}) => 
-          
-          <View style={styles.listcontainer}><Text style={styles.listText}>{item.actdate}, {item.activity}</Text>
-          
-          <Text style={styles.listButtons} onPress={() => deleteItem(item.id)}> Delete</Text>
-
-          <EditActivity id={item.id} activity={item.activity} date={item.actdate} today={thisDate}/>
-
-          </View>} 
-
-          data={events} 
-          ItemSeparatorComponent={listSeparator} 
-        />  
-
-      </View>
-
-      <Button title="Placeholder btn"/>
-
-    </View>
-
-*/  
-
   );
 }
 
