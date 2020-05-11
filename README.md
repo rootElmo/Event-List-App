@@ -18,3 +18,5 @@ Features
 Bugs
   * Update list after adding event
   * Show all events after updating one event
+
+Created by [Elmo Rohula.](https://github.com/rootElmo)
