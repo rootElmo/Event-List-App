@@ -6,8 +6,8 @@ This is a small React Native application made for a school project. The user is 
 
 ## To-do
 
-- Clean-up
-..* Create separate stylesheets, they're now in the components' code
-..* Comment code
-..* Implement a smarter way to set location to an event (a map with coordinates?)
-..* Fix issue with events list not updating after adding event
+Clean-up
+  * Create separate stylesheets, they're now in the components' code
+  * Comment code
+  * Implement a smarter way to set location to an event (a map with coordinates?)
+  * Fix issue with events list not updating after adding event
