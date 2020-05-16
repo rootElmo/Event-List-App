@@ -19,4 +19,8 @@ Bugs
   * Update list after adding event
   * Show all events after updating one event
 
+This page
+  * Create instructions on how to install/run this project
+  * Add pictures
+
 Created by [Elmo Rohula.](https://github.com/rootElmo)
