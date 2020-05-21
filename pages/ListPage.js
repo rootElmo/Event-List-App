@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList} from 'react-native';
+import { Text, View, FlatList} from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import DatePicker from 'react-native-datepicker';
 import { Icon, Button, Input } from 'react-native-elements';
 import ShowActivity from './components/ShowActivity';
-import EventListStyles from '../Styles/EventListStyles';
+import EventListStyles from '../styles/EventListStyles';
 
 
 const db = SQLite.openDatabase('eventdb.db');
