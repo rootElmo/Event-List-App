@@ -2,9 +2,10 @@
 
 ## About
 
+<div align="row">
 <img src="./images/scrshot005.jpg" width="350">
-
 <img src="./images/scrshot006.jpg" width="350">
+</div>
 
 This is a small React Native application made for a school project. The user is able to vreate new events, edit already added events, searching events, and deleting them. The events are stored in a SQLite database locally to the user's phone.a
 
