@@ -2,12 +2,16 @@
 
 ## About
 
+![scrshot5](./images/scrshot005.png)
+
+![scrshot6](./images/scrshot006.png)
+
 This is a small React Native application made for a school project. The user is able to vreate new events, edit already added events, searching events, and deleting them. The events are stored in a SQLite database locally to the user's phone.a
 
 ## To-do
 
 Clean-up
-  * Create separate stylesheets, they're now in the components' code
+  * **UNDER WORK ->**(Create separate stylesheets)
   * Comment code
 
 Features
@@ -21,6 +25,6 @@ Bugs
 
 This page
   * Create instructions on how to install/run this project
-  * Add pictures
+  * **UNDER WORK ->**(Add pictures)
 
 Created by [Elmo Rohula.](https://github.com/rootElmo)
