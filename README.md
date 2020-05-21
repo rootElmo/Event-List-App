@@ -2,9 +2,9 @@
 
 ## About
 
-![scrshot5](./images/scrshot005.png)
+![scrshot5](./images/scrshot005.jpg)
 
-![scrshot6](./images/scrshot006.png)
+![scrshot6](./images/scrshot006.jpg)
 
 This is a small React Native application made for a school project. The user is able to vreate new events, edit already added events, searching events, and deleting them. The events are stored in a SQLite database locally to the user's phone.a
 
