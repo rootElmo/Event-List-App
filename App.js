@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, FlatList, Modal } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import DatePicker from 'react-native-datepicker'/*
 import EditActivity from './pages/components/EditActivity';*/
 import ListPage from './pages/ListPage.js';
-import{createAppContainer} from'react-navigation';
-import{createStackNavigator} from'react-navigation-stack'
+import {createAppContainer} from'react-navigation';
+import {createStackNavigator} from'react-navigation-stack'
 import NavigationPlaceholderPage from './pages/NavigationPlaceholderPage.js';
 import CurrentActivitiesPage from './pages/CurrentActivitiesPage.js';
 import AddEventPage from './pages/AddEventPage.js';
 
+import AppStyles from './Styles/EventListStyles';
 
 const db = SQLite.openDatabase('eventdb.db');
 
@@ -23,8 +24,6 @@ const MyApp= createStackNavigator({
 
 const AppContainer = createAppContainer(MyApp);
 
-
-
 export default function App() {
   const [activity, setActivity] = useState('');
   const [actDate, setActDate] = useState('');
@@ -37,7 +36,6 @@ export default function App() {
     });
     updateList();
     setDefaultDates();
-
   }, []);
 
   const setModalVisible = (bool) => {
@@ -62,7 +60,7 @@ export default function App() {
     setActivity('');
   }
 
-  // Update courselist
+  // Update eventlist
   const updateList = () => {
     db.transaction(tx => {
       tx.executeSql('select * from event;', [], (_, { rows }) =>
@@ -83,12 +81,12 @@ export default function App() {
   const listSeparator = () => {
     return (
       <View
-        style={{
+        style={ AppStyles.EventListSeparator/*{
           height: 5,
           width: "80%",
           backgroundColor: "#fff",
           marginLeft: "10%"
-        }}
+        }*/}
       />
     );
   };

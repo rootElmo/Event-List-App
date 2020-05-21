@@ -4,6 +4,7 @@ import * as SQLite from 'expo-sqlite';
 import DatePicker from 'react-native-datepicker';
 import { Icon, Button, Input } from 'react-native-elements';
 import ShowActivity from './components/ShowActivity';
+import EventListStyles from '../Styles/EventListStyles';
 
 
 const db = SQLite.openDatabase('eventdb.db');
@@ -85,23 +86,14 @@ export default function ListPage(props) {
   const listSeparator = () => {
     return (
       <View
-        style={{
-          height: 1,
-          width: "100%",
-          backgroundColor: "grey",
-          opacity: 0.35,
-        }}
+        style={EventListStyles.eventListSeparator}
       />
     );
   };
 
   const listEmptyFunc = () => {
     return (
-      <View style={{
-        alignItems: 'center',
-        width: '100%',
-        marginVertical: 10
-      }}>
+      <View style={EventListStyles.emptyListContainer}>
         <Text style={{
           fontSize: 18,
           color: 'grey'
@@ -114,11 +106,7 @@ export default function ListPage(props) {
 
   const listFooter = () => {
     return (
-      <View style={{
-        width: '100%',
-        height: 240,
-        backgroundColor: '#f5f5f5',
-      }}>
+      <View style={EventListStyles.eventListFooter}>
       </View>
     )
   }
@@ -127,13 +115,9 @@ export default function ListPage(props) {
   const { navigate } = props.navigation;
 
   return (
-    <View style={{ flex: 1, paddingTop: 20, alignItems: 'center' }}>
-      <View style={{ backgroundColor: '#f5f5f5', width: '100%', height: '100%' }}>
-        <View style={{
-          padding: 5,
-          backgroundColor: 'white'
-        }}>
-
+    <View style={EventListStyles.pageContainer}>
+      <View style={EventListStyles.pageComponentsContainer}>
+        <View style={EventListStyles.searchContainer}>
           <Input
             placeholder="Search for activities"
             value={activity}
@@ -147,9 +131,8 @@ export default function ListPage(props) {
             format="YYYY-MM-DD"
             showIcon={false}
           />
-
           <Button
-            buttonStyle={styles.buttonStyle}
+            buttonStyle={EventListStyles.eventListButtons}
             title="SEARCH"
             onPress={searchList}
             icon={{
@@ -160,7 +143,7 @@ export default function ListPage(props) {
             iconRight={true}
           />
           <Button
-            buttonStyle={styles.buttonStyle}
+            buttonStyle={EventListStyles.eventListButtons}
             title="SHOW ALL"
             onPress={updateList}
             iconRight={true}
@@ -176,10 +159,8 @@ export default function ListPage(props) {
           keyExtractor={item => item.id.toString()}
           renderItem={
             ({ item }) =>
-              <View style={styles.listcontainer}>
-
-                <Text style={styles.listText}>{item.activity}, {item.actdate}</Text>
-
+              <View style={EventListStyles.listItemContainer}>
+                <Text style={EventListStyles.listItemText}>{item.activity}, {item.actdate}</Text>
                 <ShowActivity
                   actv={item.activity}
                   date={item.actdate}
@@ -189,7 +170,6 @@ export default function ListPage(props) {
                   deleteFunc={deleteItem}
                   updateFunc={updateItem}
                 />
-
               </View>
           }
           data={events}
@@ -198,12 +178,7 @@ export default function ListPage(props) {
           ListFooterComponent={listFooter}
         />
       </View>
-      <View style={{
-        position: 'absolute',
-        bottom: 20,
-        right: 40,
-        width: '10%'
-      }}>
+      <View style={EventListStyles.addButtonContainer}>
         <Icon
           name='add'
           title="+"
@@ -229,38 +204,3 @@ ListPage.navigationOptions = ({ navigate }) => (
     }
   }
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',/*
-  justifyContent: 'center',*/
-
-  },
-  listcontainer: {
-    flexDirection: 'row',
-    backgroundColor: '#f5f5f5',
-    alignItems: 'center',
-    height: 60,
-    paddingHorizontal: '2%',
-  },
-  listButtons: {
-    fontSize: 18,
-    color: '#0000ff',
-    margin: 5,
-    color: 'grey'
-  },
-  listText: {
-    fontSize: 14,
-    width: 200,
-    color: 'grey'
-  },
-  buttonStyle: {
-    height: 60,
-    backgroundColor: 'lightblue',
-    marginTop: 5,
-    justifyContent: 'space-evenly',
-    paddingHorizontal: 120,
-  },
-});
