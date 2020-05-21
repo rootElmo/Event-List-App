@@ -6,6 +6,8 @@
 
 ![scrshot6](./images/scrshot006.jpg | width=250)
 
+<img scr="./images/scrshot005.jpg" width="250">
+
 This is a small React Native application made for a school project. The user is able to vreate new events, edit already added events, searching events, and deleting them. The events are stored in a SQLite database locally to the user's phone.a
 
 ## To-do
